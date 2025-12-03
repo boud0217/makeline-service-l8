@@ -28,8 +28,7 @@ func NewMongoDBOrderRepo(mongoUri string, mongoDb string, mongoCollection string
 				AuthSource: mongoDb,
 				Username:   mongoUser,
 				Password:   mongoPassword,
-			}).
-			SetTLSConfig(&tls.Config{InsecureSkipVerify: false})
+			})
 	}
 
 	mongoClient, err := mongo.Connect(ctx, clientOptions)
