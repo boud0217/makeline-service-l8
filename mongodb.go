@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"crypto/tls"
 	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
