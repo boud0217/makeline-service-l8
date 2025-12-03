@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-	"fmt"
 	"os"
 	"strconv"
 
@@ -221,12 +220,7 @@ func initDatabase(apiType string) (*OrderService, error) {
 		collectionName := getEnvVar("ORDER_DB_COLLECTION_NAME")
 		dbUsername := os.Getenv("ORDER_DB_USERNAME")
 		dbPassword := os.Getenv("ORDER_DB_PASSWORD")
-		dbURI := fmt.Sprintf("mongodb://%s:%s@mongodb:27017",
-						os.Getenv("ORDER_DB_USERNAME"),
-						os.Getenv("ORDER_DB_PASSWORD"))
-
 		mongoRepo, err := NewMongoDBOrderRepo(dbURI, dbName, collectionName, dbUsername, dbPassword)
-		log.Printf("%s", dbURI)
 		if err != nil {
 			return nil, err
 		}
