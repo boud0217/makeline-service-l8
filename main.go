@@ -220,7 +220,7 @@ func initDatabase(apiType string) (*OrderService, error) {
 		collectionName := getEnvVar("ORDER_DB_COLLECTION_NAME")
 		dbUsername := os.Getenv("ORDER_DB_USERNAME")
 		dbPassword := os.Getenv("ORDER_DB_PASSWORD")
-		dbURIuri := fmt.Sprintf("mongodb://%s:%s@mongodb:27017",
+		dbURI := fmt.Sprintf("mongodb://%s:%s@mongodb:27017",
 						os.Getenv("ORDER_DB_USERNAME"),
 						os.Getenv("ORDER_DB_PASSWORD"))
 
