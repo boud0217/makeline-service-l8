@@ -220,6 +220,10 @@ func initDatabase(apiType string) (*OrderService, error) {
 		collectionName := getEnvVar("ORDER_DB_COLLECTION_NAME")
 		dbUsername := os.Getenv("ORDER_DB_USERNAME")
 		dbPassword := os.Getenv("ORDER_DB_PASSWORD")
+		dbURIuri := fmt.Sprintf("mongodb://%s:%s@mongodb:27017",
+						os.Getenv("ORDER_DB_USERNAME"),
+						os.Getenv("ORDER_DB_PASSWORD"))
+
 		mongoRepo, err := NewMongoDBOrderRepo(dbURI, dbName, collectionName, dbUsername, dbPassword)
 		if err != nil {
 			return nil, err
