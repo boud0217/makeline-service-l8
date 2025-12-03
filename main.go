@@ -226,6 +226,7 @@ func initDatabase(apiType string) (*OrderService, error) {
 						os.Getenv("ORDER_DB_PASSWORD"))
 
 		mongoRepo, err := NewMongoDBOrderRepo(dbURI, dbName, collectionName, dbUsername, dbPassword)
+		log.Printf("%s", dbURI)
 		if err != nil {
 			return nil, err
 		}
